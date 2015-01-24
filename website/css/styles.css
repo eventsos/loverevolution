@@ -408,11 +408,12 @@ input:focus {
 
 /*----  SECTION:  HOME > TOP BAR   ----*/
 .navbar {
-	background: #FFF;
+	background: #000;
 	overflow: hidden;
 	border: 0;
 	border-radius: 0 !important;
 	text-align: left;
+	opacity: 0.85;
 	-webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 	        box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 }
@@ -428,24 +429,30 @@ input:focus {
 }
 .navbar-inverse .navbar-nav>li {
 	display: inline;
-	margin-right: 20px;
-	margin-top: 20px;
 }
+.navbar-inverse .navbar-nav>li>a>span {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
 .navbar-inverse .navbar-nav>li:last-child {
 	margin-right: 0 !important;
 }
 .navbar-inverse .navbar-nav>li>a {
 	color: #404040;
+	line-height: 77px;
 	padding: 0;
-	line-height: 35px;
 }
+
 .navbar-brand {
 	height: 76px;
 	position: relative;
 	line-height: 45px;
 }
 .current a {
-	color: #e96656 !important;
+	color: white !important;
 	position: relative;
 	outline: none;
 }
@@ -461,8 +468,9 @@ input:focus {
 	left: 12.5%;
 }
 .navbar-inverse .navbar-nav>li>a:hover {
-	color: #e96656;
+	color: black;
 	outline: none;
+	background-color: #e96656;
 }
 .navbar-toggle {
 	border: 0;
