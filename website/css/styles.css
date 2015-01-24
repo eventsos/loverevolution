@@ -89,6 +89,22 @@ p {
 	margin: auto;
 }
 
+.image-caption {
+	top:10%;
+	right:10%;
+	position: absolute;
+}
+
+.image-container{
+	position:relative;
+	height: auto;
+}
+
+.image-container>img {
+	width: 100%;
+}
+
+
 /*---------------------------------------
  **   TYPOGRAPHY                     -----
 -----------------------------------------*/
@@ -401,7 +417,7 @@ input:focus {
 
 .header {
 	background: rgba(0, 0, 0, 0.5);
-	min-height: 775px;
+	min-height: 77px;
 	position: relative;
 	overflow: hidden;
 }
