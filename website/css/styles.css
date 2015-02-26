@@ -837,6 +837,7 @@ width: -webkit-calc(100% / 2);
 }
 .skills .skill .skill1,.skill2,.skill3,.skill4 {
 	font-size: 16px !important;
+	display:none;
 }
 .skills .skill h6 {
 	text-transform: uppercase;
