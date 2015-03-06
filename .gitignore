@@ -1,11 +1,3 @@
-Bilder/*
-LR_flyer_prev2.jpg
-LR_flyer_prev22.jpg
-website/.idea/*
+project
 *.iml
-
-*.mp4
-
-LR_logo.psd
-
-*.psd
+.idea
