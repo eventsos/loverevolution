@@ -1,3 +1,23 @@
+.icon-worship {
+    background: url("../images/vision/worship.png") no-repeat;
+    width: 62px;
+}
+
+.icon-city {
+    background: url("../images/vision/city.png") no-repeat;
+    width: 62px;
+}
+
+.icon-bands {
+    background: url("../images/vision/bands.png") no-repeat;
+    width: 62px;
+}
+
+.icon-location {
+    background: url("../images/vision/location.png") no-repeat;
+    width: 62px;
+}
+
 .pixeden  {
     height: 63px;
     margin: auto;
