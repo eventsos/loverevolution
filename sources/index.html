@@ -766,8 +766,8 @@ TODO:
 	</div> 
 	
 	<!-- SUBSCRIPTION FORM -->
-	<form action="addMailinglist.php" id="stayintouch" class="subscription wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s" role="form">
-		<input type="email" placeholder="E-Mailadresse eingeben" class="form-control input-box">
+	<form action="addMailinglist.php" method="post" id="stayintouch" class="subscription wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s" role="form">
+		<input type="email" name="email" placeholder="E-Mailadresse eingeben" class="form-control input-box">
 		<button class="btn btn-primary custom-button red-btn" id="stayincontact_send">Ich möchte den Newsletter bekommen!</button>
 	</form>
 	<!-- / END SUBSCRIPTION FORM -->
@@ -1034,32 +1034,6 @@ TODO:
 
 <script>
     $(document).ready(function () {
-        $("#submitContact").click(function (e) {
-            var postData = $("#contactForm").serializeArray();
-            var formURL = $("#contactForm").attr("action");
-            var btn = $(this);
-            btn.button('sending...');
-            $.ajax({
-                url: formURL,
-                type: "POST",
-                data: postData,
-                success: function (data, textStatus, jqXHR) {
-                    console.log(data);
-                    if (data == "missingFields") {
-                        btn.html('E-Mailadresse und Nachricht sind Pflichtfelder. Noch mal verschicken?');
-                    }
-                    if (data == "success") {
-                        btn.html('Danke! Die Nachricht wurd erfolgreich verschickt.');
-                    }
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    btn.html("An error occured!");
-                }
-            });
-        });
-    });
-
-    $(document).ready(function () {
         $("#stayincontact_send").click(function (e) {
             var postData = $("#stayintouch").serializeArray();
             var formURL = $("#stayintouch").attr("action");
@@ -1082,8 +1056,39 @@ TODO:
                     btn.html("An error occured!");
                 }
             });
+            e.preventDefault();
         });
+
+
+        $("#submitContact").click(function (e) {
+            var postData = $("#contactForm").serializeArray();
+            var formURL = $("#contactForm").attr("action");
+            var btn = $(this);
+            btn.button('sending...');
+            $.ajax({
+                url: formURL,
+                type: "POST",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    console.log(data);
+                    if (data == "missingFields") {
+                        btn.html('E-Mailadresse und Nachricht sind Pflichtfelder. Noch mal verschicken?');
+                    }
+                    if (data == "success") {
+                        btn.html('Danke! Die Nachricht wurd erfolgreich verschickt.');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    btn.html("An error occured!");
+                }
+            });
+            e.preventDefault();
+        });
+
+
     });
+
+
 </script>
 
 <!-- =========================
