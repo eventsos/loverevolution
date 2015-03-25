@@ -1,11 +1,9 @@
 <!--
 TODO:
-- icons für vision
 - videos für vision sollten auch auf mobile funktionieren
 - stay in touch email versenden hinzufügen
 - ids überarbeiten
 - impressum
-- video zu vision hinzufügen (flyer austauschen)
 -->
 <!doctype html>
 <html lang="en">
@@ -222,7 +220,7 @@ TODO:
 
 	<!-- SINGLE PRODUCT -->
 	<div class="col-md-4">
-		<div class="item item-1" style="background-image: url('images/vision/visionstreffen.jpg')">
+		<div class="item item-1" style="background-image: url('images/header/flyer.jpg')">
 			<div class="item-overlay">
 			</div>
 			<div class="item-content">
@@ -230,9 +228,9 @@ TODO:
 					<div class="item-top-content-inner">
 						<div class="item-product" style="width: 100%">
 							<div class="item-top-title">
-								<h5>Visionstreffen</h5>  <!-- PRODUCT TITLE-->
+								<h5>Beitrag "Kirche in Bayern"</h5>  <!-- PRODUCT TITLE-->
 								<p class="subdescription">
-									Dieses 15-minütiges MP4-Video wird euch unsere Vision und unser Ziel näher bringen.
+									Ein Einblick in einen Lobpreisabend, bei denen ein Fernsehteam für "Kirche in Bayern" dabei war.
 								</p> <!-- PRODUCT DESCRIPTION-->
 							</div>
 						</div>
@@ -243,14 +241,64 @@ TODO:
 				<div class="item-add-content">
 					<div class="item-add-content-inner">
 						<div class="section">
-							<a href="videos/visionstreffen.mp4" download="LoveRevolutionVisionstreffen.mp4" class="btn btn-primary custom-button red-btn">Download</a><br/>
-							<a class="btn btn-primary custom-button green-btn" data-toggle="modal" data-target="#vision">online anschauen</a><br/>
+							<a href="videos/LoveRevolution_cut.mp4" download="LoveRevolutionKircheInBayern.mp4" class="btn btn-primary custom-button red-btn">Download</a><br/>
+							<a class="btn btn-primary custom-button green-btn" data-toggle="modal" data-target="#fernsehen">online anschauen</a><br/>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div> <!-- / END FIRST ITEM -->
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#fernsehen').on('hidden.bs.modal', function () {
+                videojs("fernsehen_video").pause();
+            })
+        });
+    </script>
+    <!-- Modal -->
+    <div class="modal fade" id="fernsehen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%; height: 80%; padding: 0;">
+            <div class="modal-content" style="height: 100%; border-radius: 0;">
+                <video id="fernsehen_video" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="" data-setup='{"example_option":true}'>
+                    <source src="videos/LoveRevolution_cut.mp4" type='video/mp4' />
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="item item-1" style="background-image: url('images/vision/visionstreffen.jpg')">
+            <div class="item-overlay">
+            </div>
+            <div class="item-content">
+                <div class="item-top-content">
+                    <div class="item-top-content-inner">
+                        <div class="item-product" style="width: 100%">
+                            <div class="item-top-title">
+                                <h5>Visionstreffen</h5>  <!-- PRODUCT TITLE-->
+                                <p class="subdescription">
+                                    Dieses 15-minütiges MP4-Video wird euch unsere Vision und unser Ziel näher bringen.
+                                </p> <!-- PRODUCT DESCRIPTION-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM HOVER CONTENT-->
+                <div class="item-add-content">
+                    <div class="item-add-content-inner">
+                        <div class="section">
+                            <a href="videos/visionstreffen.mp4" download="LoveRevolutionVisionstreffen.mp4" class="btn btn-primary custom-button red-btn">Download</a><br/>
+                            <a class="btn btn-primary custom-button green-btn" data-toggle="modal" data-target="#vision">online anschauen</a><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- / END FIRST ITEM -->
 
 	<script type="text/javascript">
 		$( document ).ready(function() {
