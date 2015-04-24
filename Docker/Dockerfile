@@ -12,5 +12,8 @@ RUN chmod 600 /.github
 RUN echo "    IdentityFile /.github" >> /etc/ssh/ssh_config
 RUN mkdir /root/.ssh/
 RUN ssh-keyscan github.com > /root/.ssh/known_hosts
-ADD ../.git /
+RUN git clone git@github.com:eventsos/loverevolution.git .
 RUN git checkout master && git reset --hard
+ADD resources/localcontext /localcontext
+RUN git checkout develop
+RUN sed -i '/DocumentRoot/c\DocumentRoot /var/www/html/sources' /etc/apache2/sites-available/000-default.conf
