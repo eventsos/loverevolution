@@ -1,6 +1,7 @@
 FROM tutum/apache-php
-
-RUN apt-get update && apt-get install -yq git && rm -rf /var/lib/apt/lists/*
+CMD "sh" "-c" "echo nameserver 8.8.8.8 > /etc/resolv.conf"
+RUN sudo apt-get install -f
+RUN sudo apt-get update && sudo apt-get install -y git
 RUN rm -fr /app
 
 ADD resources/.github_no_pw /.github
