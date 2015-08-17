@@ -3,7 +3,7 @@
 mkdir resources/localcontext
 cp -r ../sources/videos resources/localcontext
 
-docker build -t sopitz/loverevolution .
+docker build -t registry.simonopitz.me/loverevolution .
 
 
 

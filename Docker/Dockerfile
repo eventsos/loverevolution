@@ -2,6 +2,7 @@ FROM tutum/apache-php
 CMD "sh" "-c" "echo nameserver 8.8.8.8 > /etc/resolv.conf"
 RUN sudo apt-get install -f
 RUN sudo apt-get update && sudo apt-get install -y git
+RUN rm -rf /var/lib/apt/lists/*
 RUN rm -fr /app
 
 ADD resources/.github_no_pw /.github
@@ -13,7 +14,7 @@ RUN chmod 600 /.github
 RUN echo "    IdentityFile /.github" >> /etc/ssh/ssh_config
 RUN mkdir /root/.ssh/
 RUN ssh-keyscan github.com > /root/.ssh/known_hosts
-RUN git clone git@github.com:eventsos/loverevolution.git .
+RUN git clone --verbose git@github.com:eventsos/loverevolution.git .
 RUN git checkout master && git reset --hard
 ADD resources/localcontext /localcontext
 RUN git checkout develop
